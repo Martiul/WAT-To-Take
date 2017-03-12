@@ -28,7 +28,7 @@
         </form> 
     </div>
     <br><br>
-
+       
     <div id = "post-req-box"> 
         <p style = "font-size: 24px"> Post-requisite Finder:</p>
         <form onsubmit="return post()">
@@ -46,20 +46,20 @@
     </div>
     
     
+    <!-- Scripts -->
     <script>
-
+        
         function pre(e) {
             var a = (document.getElementById("pre_name").value).toUpperCase();
             var b = document.getElementById("pre_num").value;
-
-                
+            
             $.get("pre-requisites.json",function(data) {
                 console.log(data[a+b]);
                 if (data[a+b] == undefined) {
-                    document.write(a+b + " has no prerequisites.");
+                    document.write(a+b + " is not a pre-requisite for any courses");
                 }
                 else {
-                    document.write("The following courses are prerequisites for " + (a+b) + "<br><br>");
+                    document.write("The following course(s) are pre-requisites for " + (a+b) + "<br><br>");
                     
                     
                     for (i = 0; i < data[a+b].length; i++) {
@@ -79,10 +79,10 @@
 
             $.get("post-requisites.json",function(data) {
                 if (data[x+y] == undefined) {
-                    document.write(x+y + " is not a prerequisite for any courses");
+                    document.write(x+y + " is not a pre-requisite for any courses");
                 }
                 else {          
-                    document.write("The following courses have " + (x+y) + " as a prerequisite:<br><br>");
+                    document.write("The following course(s) have " + (x+y) + " as a prerequisite:<br><br>");
                     console.log(data[x+y]);
 
                     for (i = 0; i < data[x+y].length; i++) {
@@ -95,6 +95,8 @@
         }
 
     </script>
+    
+
     
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js">
     
