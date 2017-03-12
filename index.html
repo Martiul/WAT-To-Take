@@ -4,12 +4,12 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="starterhacks.css">
     <meta name = "viewport" content = "width = device-width, initial-scale = 1">
-    <title> What Can I Do?</title>
+    <title> WAT Can I Do?</title>
 </head>
     
 <body>
     <br><br>
-    <p id = "heading"> What Can I Do? </p>
+    <p id = "heading"> WAT Can I Do? </p>
     
     <div id = "boxes">
     <div id = "pre-req-box"> 
@@ -56,10 +56,10 @@
             $.get("pre-requisites.json",function(data) {
                 console.log(data[a+b]);
                 if (data[a+b] == undefined) {
-                    document.write(a+b + " is not a pre-requisite for any courses");
+                    document.write(a+b + " has no prerequisites.");
                 }
                 else {
-                    document.write("The following courses are pre-requisites for " + (a+b) + "<br><br>");
+                    document.write("The following courses are prerequisites for " + (a+b) + "<br><br>");
                     
                     
                     for (i = 0; i < data[a+b].length; i++) {
@@ -79,7 +79,7 @@
 
             $.get("post-requisites.json",function(data) {
                 if (data[x+y] == undefined) {
-                    document.write(x+y + " is not a pre-requisite for any courses");
+                    document.write(x+y + " is not a prerequisite for any courses");
                 }
                 else {          
                     document.write("The following courses have " + (x+y) + " as a prerequisite:<br><br>");
