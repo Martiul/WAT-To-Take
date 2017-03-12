@@ -56,7 +56,7 @@
             $.get("pre-requisites.json",function(data) {
                 console.log(data[a+b]);
                 if (data[a+b] == undefined) {
-                    document.write(a+b + " is not a pre-requisite for any courses");
+                    document.write(a+b + " has no prerequisite courses");
                 }
                 else {
                     document.write("The following course(s) are pre-requisites for " + (a+b) + "<br><br>");
