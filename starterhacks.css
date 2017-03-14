@@ -1,5 +1,6 @@
 * {
     font-family: 'Garamond', sans-serif;
+    box-sizing: border-box;
 }
 
 html {
@@ -24,23 +25,25 @@ html {
     margin-left: 25%;
     margin-right: 12.5%;
     background-color: rgba(50,50,50,0.5);
-    padding-left: 10px;
-    padding-bottom: 10px;
-    width: 500px;
-    height: 250px;
+    text-align: center;
+    width: 12.5%;
+    height: 100%;
 }
 
 #post-req-box {
     margin-left: 12.5%;
     margin-right: 25%;
     background-color: rgba(50,50,50,0.5);
-    padding-left: 10px;
-    padding-bottom: 10px;
-    width:500px;
-    height: 250px;
+    text-align: center;
+    width: 12.5%;
+    height: 100%;
 } 
 
-#sub {
+
+
+#pre_name, #pre_num, #post_name, #post_num{
+    margin: auto;
+    font-family: Calibri;
     text-align: center;
-    margin-right: 15px;
+    width: 80%;
 }
