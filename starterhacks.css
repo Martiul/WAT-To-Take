@@ -1,49 +1,77 @@
 * {
-    font-family: 'Garamond', sans-serif;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
     box-sizing: border-box;
 }
 
 html {
-    background-image: url('starterhacks.png');
-    background-position: left;
+    //background-color: #fafafa;
 }
 
 
 #heading {
     font-size: 52px;
     text-align:  center;  
-    color: white;
-    background-color: rgba(50,50,50,0.5);
+    color: #ffffff;
+    background-color: rgba(144, 144, 144, 0.5);
+    border-radius: 55px;
+    align-self: center;
+    float:none;
 }
 
 #boxes { 
-    display: flex;
-    color: white;
+   // background-color: #fafafa;
+    width: 80%;
+    //color: white;
 }
 
 #pre-req-box {
-    margin-left: 25%;
-    margin-right: 12.5%;
-    background-color: rgba(50,50,50,0.5);
+   // background-color: rgba(50,50,50,0.5);
     text-align: center;
-    width: 12.5%;
     height: 100%;
+    
 }
 
 #post-req-box {
-    margin-left: 12.5%;
-    margin-right: 25%;
-    background-color: rgba(50,50,50,0.5);
+    //background-color: rgba(50,50,50,0.5);
     text-align: center;
-    width: 12.5%;
+    border-width: medium
     height: 100%;
 } 
 
 
-
-#pre_name, #pre_num, #post_name, #post_num{
+#pre_name, #pre_num, #post_name, #post_num {
     margin: auto;
-    font-family: Calibri;
     text-align: center;
     width: 80%;
+    background-color: #e3e3e3;
+    border-radius: 20px;
+    border-width: 0px;
+}
+
+
+#sub {
+    background-color: #b5b5b5;
+    color: #fff;
+    border-width: 0;
+    border-radius: 10px; 
+}
+
+#pre-req-result, #post-req-result {
+    background-color: #e6e6e6;
+    text-align: left;
+    color: #000;
+}
+
+#bottom-img1 {
+    filter: grayscale(30%);
+    float:left;
+    margin-top:50px;
+    width:50%;
+}
+
+#bottom-img2 {
+    filter: grayscale(30%);
+    float:left;
+    margin-top:50px;
+    width:50%;
 }

@@ -2,16 +2,22 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="starterhacks.css">
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
     <meta name = "viewport" content = "width = device-width, initial-scale = 1">
     <title> WAT To Take?</title>
 </head>
     
 <body>
     <br><br>
-    <p id = "heading"> WAT To Take? </p>
-    
-    <div id = "boxes">
-        <div id = "pre-req-box"> 
+    <div class="row" >
+        <div class="col-md-4"></div>
+        <p class="col-md-4" id = "heading"> WAT To Take? </p>
+        <div class="col-md-4"></div>
+    </div>
+    <br>
+    <div class="container" id="boxes">
+    <div class="row">
+        <div class="col-md-3" id = "pre-req-box"> 
             <p style = "font-size: 24px"> Prerequisite Finder:</p>
             <form onsubmit="return pre()">
                 
@@ -24,13 +30,16 @@
                 <input id = "pre_num" type="text" name="Course Number" value="">
                 
                 <br><br>  
-                <div id = "sub"> <input type="submit" value="Submit"> </div> <br>
+                <input type="submit" value="Submit" id="sub"> <br><br>
             </form> 
         </div>
         
+        <div class="col-md-3" id = "pre-req-result"> <!--Where the result will be outputted-->
+        </div> 
+        
         <br><br>
 
-        <div id = "post-req-box"> 
+        <div  class="col-md-3" id = "post-req-box"> 
             
             <p style = "font-size: 24px"> Postrequisite Finder:</p>
             <form onsubmit="return post()">
@@ -43,32 +52,43 @@
                 <input id = "post_num" type="text" name="Course Number" value="">
                 
                 <br><br>    
-                <div id = "sub"> <input type="submit" value="Submit">  </div> <br>
+                <input id="sub" type="submit" value="Submit"> 
+                <br><br>
             </form> 
-        </div>     
+        </div>   
+        
+        <div  class="col-md-3" id = "post-req-result"> <!--Where the result will be outputted--> 
+        </div>
     </div>
+    </div>
+    
+    <img src="trio-ringroad-qnc-slc-fall.jpg" id="bottom-img1">
+    <img src="University-of-Waterloo1.jpg" id="bottom-img2">
     
     
     
     <!-- Scripts -->
     
     <script>
-        
+        /*$(document).ready(function() {
+            var $pre_name, $prenum = null;
+            if()
+        })*/
         function pre(e) {
             var a = (document.getElementById("pre_name").value).toUpperCase();
             var b = document.getElementById("pre_num").value;
+            var result = document.getElementById("pre-req-result"); 
             
             $.get("pre-requisites.json",function(data) {
                 console.log(data[a+b]);
                 if (data[a+b] == undefined) {
-                    document.write(a+b + " has no prerequisites");
+                    result.innerHTML = a+b+" has no prerequisites";
                 }
                 else {
-                    document.write("The following course(s) are pre-requisites for " + (a+b) + "<br><br>");
+                    result.innerHTML = "The following course(s) are pre-requisites for " + (a+b) + "<br><br>";
                     
                     for (i = 0; i < data[a+b].length; i++) {
-                        document.write(data[a+b][i]);
-                        document.write("<br>");
+                        result.innerHTML += data[a+b][i] + "<br>";
                     }                     
                 }
             })
@@ -79,18 +99,18 @@
         function post(e) {
             var x = (document.getElementById("post_name").value).toUpperCase();
             var y = document.getElementById("post_num").value;
-
+            var result = document.getElementById("post-req-result");
+            
             $.get("post-requisites.json",function(data) {
                 console.log(data[x+y]);
                 if (data[x+y] == undefined) {
-                    document.write(x+y + " is not a pre-requisite for any courses");
+                    result.innerHTML = x+y + " is not a pre-requisite for any courses";
                 }
                 else {          
-                    document.write("The following course(s) have " + (x+y) + " as a prerequisite:<br><br>");
+                    result.innerHTML = "The following course(s) have " + (x+y) + " as a prerequisite:<br><br>";
                     
                     for (i = 0; i < data[x+y].length; i++) {
-                        document.write(data[x+y][i]);
-                        document.write("<br>");
+                        result.innerHTML += data[x+y][i] + "<br>";
                     }  
                 }
             })
