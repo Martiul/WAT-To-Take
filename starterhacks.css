@@ -3,25 +3,21 @@
     box-sizing: border-box;
 }
 
-html {
-    //background-color: #fafafa;
-}
+html {}
 
 
 #heading {
     font-size: 52px;
     text-align:  center;  
     color: #ffffff;
-    background-color: rgba(144, 144, 144, 0.5);
+    background-color: rgba(144, 144, 144, 0.6);
     border-radius: 55px;
     align-self: center;
     float:none;
 }
 
 #boxes { 
-   // background-color: #fafafa;
     width: 90%;
-    //color: white;
 }
 
 #pre-req-box {
