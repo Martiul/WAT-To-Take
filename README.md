@@ -1,5 +1,6 @@
-# martiul.github.io
-Temporarily in use for Starterhacks  
-https://martiul.github.io/
+# WAT-To-Take
+Small project made at our first hackathon! :D
 
-:D
+Hosted on Github Pages:
+
+https://martiul.github.io/WAT-To-Take/
