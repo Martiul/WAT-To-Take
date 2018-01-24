@@ -20,7 +20,7 @@ html {
 
 #boxes { 
    // background-color: #fafafa;
-    width: 80%;
+    width: 90%;
     //color: white;
 }
 
@@ -63,14 +63,14 @@ html {
 }
 
 #bottom-img1 {
-    filter: grayscale(30%);
+    filter: grayscale(50%);
     float:left;
     margin-top:50px;
     width:50%;
 }
 
 #bottom-img2 {
-    filter: grayscale(30%);
+    filter: grayscale(50%);
     float:left;
     margin-top:50px;
     width:50%;
